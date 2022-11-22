@@ -65,7 +65,7 @@ public class DiscordOAuth
             .data("grant_type", GRANT_TYPE_AUTHORIZATION)
             .data("code", code)
             .data("redirect_uri", redirectUri)
-            .data("scope", String.join(" ", scope))
+            .data("scope", String.join("%20", scope))
             .ignoreContentType(true);
 
         String response = request.post().body().text();
