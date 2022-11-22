@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.mokulu.discord.oauth.model.Connection;
 import io.mokulu.discord.oauth.model.Guild;
+import io.mokulu.discord.oauth.model.Member;
 import io.mokulu.discord.oauth.model.User;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -59,6 +60,10 @@ public class DiscordAPI
     public List<Guild> fetchGuilds() throws IOException
     {
         return Arrays.asList(toObject(handleGet("/users/@me/guilds"), Guild[].class));
+    }
+
+    public Member fetchMember(Guild guild, User user) throws IOException {
+        return toObject(handleGet("/guilds/" + guild.getId() + "/members/" + user.getId()), Member.class);
     }
 
     /**

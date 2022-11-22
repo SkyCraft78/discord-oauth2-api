@@ -1,13 +1,12 @@
 package io.mokulu.discord.oauth.model;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import com.google.gson.annotations.SerializedName;
-
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Setter;
+
+import java.util.LinkedList;
+import java.util.List;
 
 @Data
 @Setter(AccessLevel.PRIVATE)
